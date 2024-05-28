@@ -1,0 +1,852 @@
+{
+	"info": {
+		"_postman_id": "eaa29137-38a4-4f1f-88a2-45749e75a0bf",
+		"name": "my_order_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34086740"
+	},
+	"item": [
+		{
+			"name": "order_invoice",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status is true in the response\", function () {",
+							"    pm.expect(pm.response.json().success).to.be.true;",
+							"});",
+							"",
+							"pm.test(\"Data in the response is not empty\", function () {",
+							"    pm.expect(pm.response.json().data).to.not.be.empty;",
+							"});",
+							"// Test to check if the message matches with \"Invoice download started\" in the response",
+							"pm.test(\"Message in the response matches with 'Invoice download started'\", function () {",
+							"    pm.expect(pm.response.json().message).to.equal(\"Invoice download started\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "dd23986631c854f3644c3b9db4520c80f8b92a5a738e7e94f6e01f792333395e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "a6d9fb0ffd3ca461f2a9af50c77b71ce170364182aabfca7e05798b88cb2bc7e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/myorders/consumer/order/invoice/new/v1?order_id=11798667&invoice_type=0",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"myorders",
+						"consumer",
+						"order",
+						"invoice",
+						"new",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "order_id",
+							"value": "11798667"
+						},
+						{
+							"key": "invoice_type",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel_order",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "dd23986631c854f3644c3b9db4520c80f8b92a5a738e7e94f6e01f792333395e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "32cd6db6eeb867c263ac0d1694b71570fa670ffa11fc25e58ebf6b5ff2fb0a09",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{qa1}}/myorders/consumer/cancel/order/v4/11798665/?is_support=0",
+					"host": [
+						"{{qa1}}"
+					],
+					"path": [
+						"myorders",
+						"consumer",
+						"cancel",
+						"order",
+						"v4",
+						"11798665",
+						""
+					],
+					"query": [
+						{
+							"key": "is_support",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order_confirm",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Response body has the property 'success' set to true\", function () {",
+							"    pm.expect(pm.response.json()).to.have.property('success', true);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "dd23986631c854f3644c3b9db4520c80f8b92a5a738e7e94f6e01f792333395e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "9f6c63649f10028c1d55b472e8922bc4c67e89a15dfdbeffc050f080b61f1374",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/myorders/consumer/cart/order/confirm/v2/?cart_id=34848271715234748012_t1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"myorders",
+						"consumer",
+						"cart",
+						"order",
+						"confirm",
+						"v2",
+						""
+					],
+					"query": [
+						{
+							"key": "cart_id",
+							"value": "34848271715234748012_t1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consumer_order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Updated to fix TypeError: pm.request.url.match is not a function error",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Each order in the data array has a pending status\", function () {",
+							"    pm.response.json().data.forEach(function(order) {",
+							"        pm.expect(order.section_data.status).to.equal('P');",
+							"    });",
+							"});",
+							"",
+							"pm.test(\"Order ID in the URL matches the order ID in the response body\", function () {",
+							"    var urlParts = pm.request.url.split('/');",
+							"    var orderIdInUrl = Number(urlParts[urlParts.length - 2]);",
+							"    pm.response.json().data.forEach(function(order) {",
+							"        pm.expect(order.section_data.order_id).to.equal(orderIdInUrl);",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "aa2e06215d9c0bf713104478b5900f326af3e5340943915aaffb94bb744cb077",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "aa2e06215d9c0bf713104478b5900f326af3e5340943915aaffb94bb744cb077",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "null",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/myorders/consumer/consumer/order/v6/18069235/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"myorders",
+						"consumer",
+						"consumer",
+						"order",
+						"v6",
+						"18069235",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cn_consumer_order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Each order has a non-null 'id' field\", function () {",
+							"    pm.response.json().orders.forEach(function(order) {",
+							"        pm.expect(order.id).to.not.be.null;",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "aa2e06215d9c0bf713104478b5900f326af3e5340943915aaffb94bb744cb077",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "a6d9fb0ffd3ca461f2a9af50c77b71ce170364182aabfca7e05798b88cb2bc7e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/myorders/consumer/consumer/orders/v3/?page_no=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"myorders",
+						"consumer",
+						"consumer",
+						"orders",
+						"v3",
+						""
+					],
+					"query": [
+						{
+							"key": "tab",
+							"value": "active",
+							"disabled": true
+						},
+						{
+							"key": "support_req",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "page_no",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products_category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Value for success is true in the response\", function () {",
+							"    pm.expect(pm.response.json().success).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "aa2e06215d9c0bf713104478b5900f326af3e5340943915aaffb94bb744cb077",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "7d3ac5c6ecddad1b94c7cc59b9a39c443e9c9847c8c8b9eb778c15fd5f13152f",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/myorders/products/category/v2/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"myorders",
+						"products",
+						"category",
+						"v2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order_rating",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Value for success is true\", function () {",
+							"    pm.expect(pm.response.json().success).to.be.true;",
+							"});",
+							"// Test to check if the order_id is not null",
+							"pm.test(\"Order_id is not null\", function () {",
+							"    pm.expect(pm.response.json().data.order_id).to.not.be.null;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "aa2e06215d9c0bf713104478b5900f326af3e5340943915aaffb94bb744cb077",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "access-token",
+						"value": "a6d9fb0ffd3ca461f2a9af50c77b71ce170364182aabfca7e05798b88cb2bc7e",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/myorders/consumer/total/order/rating/v2/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"myorders",
+						"consumer",
+						"total",
+						"order",
+						"rating",
+						"v2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Check if the search text is 'mango'\", function () {",
+							"    var responseData = pm.response.json();",
+							"    pm.expect(responseData.data.search_text).to.equal('mango');",
+							"});",
+							"// Test to check if the 'id' is not null",
+							"pm.test(\"Each item has a non-null 'id'\", function () {",
+							"    pm.response.json().data.items.forEach(function(item) {",
+							"        pm.expect(item.data.id).to.not.be.null;",
+							"    });",
+							"});",
+							"",
+							"pm.test(\"Check if the max quantity limit is 5\", function () {",
+							"    pm.response.json().data.items.forEach(function(item) {",
+							"        pm.expect(item.data.max_quant_limit).to.equal(5);",
+							"    });",
+							"});",
+							"",
+							"// Test to check if the price is not null",
+							"pm.test(\"Each item has a non-null price\", function () {",
+							"    pm.response.json().data.items.forEach(function(item) {",
+							"        pm.expect(item.data.price).to.not.be.null;",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "aa2e06215d9c0bf713104478b5900f326af3e5340943915aaffb94bb744cb077",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "a6d9fb0ffd3ca461f2a9af50c77b71ce170364182aabfca7e05798b88cb2bc7e",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Mangoes\",\n  \"type\": \"new_name\",\n  \"new_title\": \"mangoes\",\n  \"top_most\": true,\n  \"icon\": \"\",\n  \"search_text\": \"mango\",\n  \"latitude\": 28.443705,\n  \"longitude\": 77.05593757,\n  \"slotId\": \"110524\",\n  \"auto_suggest\": true,\n  \"filters\": [],\n  \"page\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/otipy/products/search/v6/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"otipy",
+						"products",
+						"search",
+						"v6",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products_trending",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Success property is true\", function () {",
+							"    pm.expect(pm.response.json().success).to.be.true;",
+							"});",
+							"// Check if the value for items is not null",
+							"pm.test(\"Value for items is not null\", function () {",
+							"    pm.expect(pm.response.json().data.items).to.not.be.null;",
+							"});",
+							"pm.test(\"Value for title1 includes the string 'Trending'\", function () {",
+							"    var responseData = pm.response.json();",
+							"    pm.expect(responseData.data.title1).to.include('Trending');",
+							"});",
+							"",
+							"pm.test(\"Value for title1 includes the string 'Trending'\", function () {",
+							"    var responseData = pm.response.json();",
+							"    pm.expect(responseData.data.title2).to.include('Products');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "aa2e06215d9c0bf713104478b5900f326af3e5340943915aaffb94bb744cb077",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/myorders/products/trending/v2/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"myorders",
+						"products",
+						"trending",
+						"v2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "heath_check",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response body contains 'Everything is ok' when the date is present\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    if (jsonData.data !== \"\") {",
+							"        pm.expect(jsonData.data).to.include('Everything is ok');",
+							"    }",
+							"});",
+							"",
+							"pm.test(\"Value for success is 'true' in the response\", function () {",
+							"    pm.expect(pm.response.json().success).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "aa2e06215d9c0bf713104478b5900f326af3e5340943915aaffb94bb744cb077",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/myorders/consumer/health/check/v1/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"myorders",
+						"consumer",
+						"health",
+						"check",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consumer_move_order",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "aa2e06215d9c0bf713104478b5900f326af3e5340943915aaffb94bb744cb077",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/myorders/consumer/move/order/v1/11798554/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"myorders",
+						"consumer",
+						"move",
+						"order",
+						"v1",
+						"11798554",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

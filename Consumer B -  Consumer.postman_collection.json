@@ -1,0 +1,1223 @@
+{
+	"info": {
+		"_postman_id": "e06ac0f8-d43e-4ee5-bb95-fca484c409cd",
+		"name": "Consumer B -  Consumer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34086740"
+	},
+	"item": [
+		{
+			"name": "Tool Tip Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\"phone\": 9899589188, \n\n\"otp\": 1384\n\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/cons/consumer/tooltip/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"consumer",
+						"tooltip",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "P<version_id>\\d+)/",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "Consumer Details API"
+			},
+			"response": []
+		},
+		{
+			"name": "App launch Config",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/cons/consumer/applaunchconfig/otipyapp/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"consumer",
+						"applaunchconfig",
+						"otipyapp",
+						"v1"
+					]
+				},
+				"description": "App Config"
+			},
+			"response": []
+		},
+		{
+			"name": "Active Cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{qa1}}/cons/consumer/active/cart/v1",
+					"host": [
+						"{{qa1}}"
+					],
+					"path": [
+						"cons",
+						"consumer",
+						"active",
+						"cart",
+						"v1"
+					]
+				},
+				"description": "Unsubscribe API"
+			},
+			"response": []
+		},
+		{
+			"name": "Cons Cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/consumer/active/cart/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"consumer",
+						"active",
+						"cart",
+						"v1"
+					]
+				},
+				"description": "Active Cart "
+			},
+			"response": []
+		},
+		{
+			"name": "Cons Cart Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/consumer/active/cart/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"consumer",
+						"active",
+						"cart",
+						"v1"
+					]
+				},
+				"description": "Active Cart "
+			},
+			"response": []
+		},
+		{
+			"name": "Sodexo Payment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/payment/sodexo/payment/show_permission/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"payment",
+						"sodexo",
+						"payment",
+						"show_permission",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Ranking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(150);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/payment/ranking/v1?access-token={{CAT}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"payment",
+						"ranking",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "access-token",
+							"value": "{{CAT}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recent Transactions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{qa1}}/cons/payment/recent/transaction/v1",
+					"host": [
+						"{{qa1}}"
+					],
+					"path": [
+						"cons",
+						"payment",
+						"recent",
+						"transaction",
+						"v1"
+					]
+				},
+				"description": "Payment Transaction "
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Verify",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/payment/verify/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"payment",
+						"verify",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saving Screen Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/payment/saving/screen/data/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"payment",
+						"saving",
+						"screen",
+						"data",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "access-token",
+							"value": "1e4caa21d87aec548abb5bc79cd4a5148fb2b3ce268c7025faa9ed3b68238551",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lifetime Savings  VI",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/payment/life/saving/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"payment",
+						"life",
+						"saving",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Referral",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Success value is true\", function () {",
+							"    pm.expect(pm.response.json().success).to.be.true;",
+							"});",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "aa2e06215d9c0bf713104478b5900f326af3e5340943915aaffb94bb744cb077",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Test\",\n  \"referral_code\": \"FI9O23\",\n  \"referral_flow\": false,\n  \"prod_id\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/cons/registration/validate/referral/code/v2/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"registration",
+						"validate",
+						"referral",
+						"code",
+						"v2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Portablae Agent",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/registration/probable/agent/info/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"registration",
+						"probable",
+						"agent",
+						"info",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "access-token",
+							"value": "1e4caa21d87aec548abb5bc79cd4a5148fb2b3ce268c7025faa9ed3b68238551",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unseviceable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/registration/unservicable/area/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"registration",
+						"unservicable",
+						"area",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign Up",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/cons/registration/signup/config/v1?access-token=1e4caa21d87aec548abb5bc79cd4a5148fb2b3ce268c7025faa9ed3b68238551",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"registration",
+						"signup",
+						"config",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "access-token",
+							"value": "1e4caa21d87aec548abb5bc79cd4a5148fb2b3ce268c7025faa9ed3b68238551"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refer And Earn",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/consumer/refer_and_earn/new/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"consumer",
+						"refer_and_earn",
+						"new",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refer And Earn Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/consumer/refer_and_earn/new/v1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"consumer",
+						"refer_and_earn",
+						"new",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saving Screen Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/payment/saving/screen/data/v1/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"payment",
+						"saving",
+						"screen",
+						"data",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consumer Prefeerences",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Value for success is true\", function () {",
+							"    pm.expect(pm.response.json().success).to.be.true;",
+							"});",
+							"",
+							"pm.test(\"Value for amount is not null\", function () {",
+							"    pm.expect(pm.response.json().data.amount).to.not.be.null;",
+							"});",
+							"",
+							"pm.test(\"Value for delivery_day_time is not null\", function () {",
+							"    pm.expect(pm.response.json().data.delivery_day_time).to.not.be.null;",
+							"});",
+							"pm.test(\"Value for consumer_preferences_data is not null\", function () {",
+							"    pm.expect(pm.response.json().data.consumer_preferences_data).to.not.be.null;",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"is_delivery_preference_modified\": true,\n  \"delivery_preference\": 3,\n  \"is_slot_modified\": false,\n  \"slot_selection\": null,\n  \"is_bag_modified\": false,\n  \"bag_selection\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/cons/cart/consumer/preferences/v2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"cart",
+						"consumer",
+						"preferences",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consumer Orders/ Preferences",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/cart/consumer/orders/v4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"cart",
+						"consumer",
+						"orders",
+						"v4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Total Order Rating",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access-token",
+						"value": "{{CAT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/cart/total/order/rating/v2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"cart",
+						"total",
+						"order",
+						"rating",
+						"v2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Geo Hash",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Value for success is true\", function () {",
+							"    pm.expect(pm.response.json().success).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "c9c3346d594ededfa91d32f7b5a1ca3a719ef93b54d2865e4cbebabd9cdc2970",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access-token",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json; charset=UTF-8"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "app-client",
+						"value": "ios"
+					},
+					{
+						"key": "app-version",
+						"value": "222"
+					},
+					{
+						"key": "unique-id",
+						"value": "88AAA239-EA12-4E41-80E8-2802CC10ED7C"
+					},
+					{
+						"key": "device_id",
+						"value": "iPhone14,5"
+					},
+					{
+						"key": "uuid",
+						"value": "45d6d673dca5832019737094f2003b44b0ce716a13635adb228cdc9139a4f95b"
+					},
+					{
+						"key": "advId",
+						"value": "FCC069E0-3264-4FB0-BEB7-479AB9309765"
+					},
+					{
+						"key": "access-token",
+						"value": "c9c3346d594ededfa91d32f7b5a1ca3a719ef93b54d2865e4cbebabd9cdc2970"
+					}
+				],
+				"url": {
+					"raw": "https://qa1.crofarm.com/cons/registration/geohash/v2/?latitude=28.443659686204498&longitude=77.05595541536292&is_mmi=1",
+					"protocol": "https",
+					"host": [
+						"qa1",
+						"crofarm",
+						"com"
+					],
+					"path": [
+						"cons",
+						"registration",
+						"geohash",
+						"v2",
+						""
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "28.443659686204498"
+						},
+						{
+							"key": "longitude",
+							"value": "77.05595541536292"
+						},
+						{
+							"key": "is_mmi",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration Address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Value for success is true\", function () {",
+							"    pm.expect(pm.response.json().success).to.be.true;",
+							"});",
+							"pm.test(\"Address object has some value\", function () {",
+							"    const address = pm.response.json().address;",
+							"    pm.expect(address).to.be.an('object').that.is.not.empty;",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json; charset=UTF-8"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "app-client",
+						"value": "ios"
+					},
+					{
+						"key": "app-version",
+						"value": "222"
+					},
+					{
+						"key": "unique-id",
+						"value": "88AAA239-EA12-4E41-80E8-2802CC10ED7C"
+					},
+					{
+						"key": "device_id",
+						"value": "iPhone14,5"
+					},
+					{
+						"key": "uuid",
+						"value": "45d6d673dca5832019737094f2003b44b0ce716a13635adb228cdc9139a4f95b"
+					},
+					{
+						"key": "advId",
+						"value": "FCC069E0-3264-4FB0-BEB7-479AB9309765"
+					},
+					{
+						"key": "access-token",
+						"value": "c9c3346d594ededfa91d32f7b5a1ca3a719ef93b54d2865e4cbebabd9cdc2970"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/cons/registration/address/details/v1/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"cons",
+						"registration",
+						"address",
+						"details",
+						"v1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
